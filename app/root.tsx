@@ -8,8 +8,8 @@ export default function App() {
         <title>Remix: So great, it's funny!</title>
       </head>
       <body>
-      <Outlet />
         Hello world from root.tsx
+        <Outlet />
         <LiveReload />
       </body>
     </html>
