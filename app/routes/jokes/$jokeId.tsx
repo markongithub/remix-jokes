@@ -3,6 +3,7 @@ import { db } from "~/utils/db.server";
 
 export const loader = async ({ params }: LoaderArgs) => {
   const joke = await db.joke.findUnique({
+    select: { name: true, content: true },
     where: { id: params.jokeId },
   });
   return joke;
