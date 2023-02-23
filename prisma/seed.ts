@@ -33,7 +33,7 @@ function getJokes() {
     },
     {
       name: "Hippos",
-      content: `Why don't you find hippopotamuses hiding in trees? They're really good at it.`,
+      content: `(From seed.ts) Why don't you find hippopotamuses hiding in trees? They're really good at it.`,
     },
     {
       name: "Dinner",
