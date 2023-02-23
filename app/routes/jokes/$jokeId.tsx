@@ -1,20 +1,22 @@
 import { useLoaderData } from "@remix-run/react";
+import { db } from "~/utils/db.server";
 
 export const loader = async ({ params }: LoaderArgs) => {
-  console.log("$jokeId.tsx params: " + params);
-  return params.jokeId;
+  const joke = await db.joke.findUnique({
+    where: { id: params.jokeId },
+  });
+  return joke;
 };
 
 
 export default function JokeRoute() {
-  const jokeId = useLoaderData<typeof loader>();
+  const joke = useLoaderData<typeof loader>();
 
     return (
       <div>
-        <p>Here's your hilarious joke although I guess you wanted joke {jokeId}:</p>
+        <p>Here's your hilarious joke with the name "{joke.name}":</p>
         <p>
-          (This one is hardcoded in $jokeid.tsx.) Why don't you find hippopotamuses hiding in trees?
-          They're really good at it.
+          {joke.content}
         </p>
       </div>
     );
