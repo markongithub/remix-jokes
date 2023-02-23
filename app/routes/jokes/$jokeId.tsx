@@ -13,13 +13,12 @@ export const loader = async ({ params }: LoaderArgs) => {
 export default function JokeRoute() {
   const joke = useLoaderData<typeof loader>();
 
-    return (
-      <div>
-        <p>Here's your hilarious joke with the name "{joke.name}":</p>
-        <p>
-          {joke.content}
-        </p>
-      </div>
-    );
-  }
-  
+  return (
+    <div>
+      <p>Here's your hilarious joke with the name "{joke.name}":</p>
+      <p>
+        {joke.content}
+      </p>
+    </div>
+  );
+}
