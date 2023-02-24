@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { db } from "~/utils/db.server";
 
-export const loader = async ({ params }: LoaderArgs) => {
+export const loader = async ({ params }) => {
   const joke = await db.joke.findUnique({
     select: { name: true, content: true },
     where: { id: params.jokeId },
